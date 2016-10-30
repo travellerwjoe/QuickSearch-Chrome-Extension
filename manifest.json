@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+
+  "name": "Quick Search",
+  "description": "通过选择文本实现快速搜索",
+  "version": "0.1",
+  "permissions": [
+    "activeTab",
+    "https://ajax.googleapis.com/",
+    "<all_urls>"
+  ],
+  "content_scripts":[
+    {
+      "matches":["<all_urls>"],
+      "js":["js/quickSearch.js"],
+      "css":["css/quickSearch.css"],
+      "all_frames":true
+    }
+  ],
+  "web_accessible_resources":["img/baidu.png"]
+}
