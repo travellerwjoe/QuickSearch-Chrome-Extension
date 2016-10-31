@@ -1,5 +1,6 @@
 /**
  * Created by Joe.Wu on 2016/10/30 0030.
+ * Version v0.2
  */
 
 function QuickSearch(ele, eleContainer) {
@@ -51,15 +52,15 @@ function QuickSearch(ele, eleContainer) {
         }
         return txt.toString();
     };
-    eleContainer.onmousedown = function (e) {
-        startX = e.clientX;
-    }
-    eleContainer.onmouseup = function (e) {
+
+    function toggleSearch(e) {
         e = e || window.event;
         endX = e.clientX;
-        if (Math.abs(endX - startX) < 3) {
-            ele.style.visibility = "hidden";
-            return;
+        if (e.type == 'mouseup') {
+            if (Math.abs(endX - startX) < 3) {
+                ele.style.visibility = "hidden";
+                return;
+            }
         }
         if (e.target.className == 'quickSearchBtn') {
             return;
@@ -74,7 +75,14 @@ function QuickSearch(ele, eleContainer) {
         } else {
             ele.style.visibility = "hidden";
         }
-    };
+    }
+
+    eleContainer.addEventListener('mousedown', function (e) {
+        startX = e.clientX;
+    });
+    eleContainer.addEventListener('mouseup', toggleSearch);
+    eleContainer.addEventListener('dblclick', toggleSearch);
+
     for (var i = 0; i < btnEle.length; i++) {
         var btn = btnEle[i];
         btn.addEventListener('click', function (e) {
