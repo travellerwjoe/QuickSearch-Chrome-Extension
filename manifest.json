@@ -1,9 +1,14 @@
-{
+﻿{
   "manifest_version": 2,
 
   "name": "Quick Search",
+  "icons":{
+     "16":"img/search-16.png",
+     "48":"img/search-64.png",
+     "128":"img/search-128.png"
+  },
   "description": "通过选择文本实现快速搜索",
-  "version": "0.1",
+  "version": "0.3",
   "permissions": [
     "activeTab",
     "https://ajax.googleapis.com/",

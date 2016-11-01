@@ -1,6 +1,6 @@
-/**
+﻿/**
  * Created by Joe.Wu on 2016/10/30 0030.
- * Version v0.2
+ * Version v0.3
  */
 
 function QuickSearch(ele, eleContainer) {
